@@ -600,7 +600,7 @@
                   </select>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="Finishing">Finish</label>
+                  <label for="Finishing">Finishing</label>
                   <select
                     class="form-control"
                     id="Finishing"
@@ -624,6 +624,87 @@
                 </div>
 
               </div>
+
+              <hr class="hr hr-blurry" />
+              <!--divider-->
+
+              <h1 class="h3 mb-0 text-gray-800">
+                Project Members
+              </h1>
+
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label for="projectTitle">Writer</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Writer"
+                    name="Writer"
+                    
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="projectTitle">Editor (Coordinator)</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Coordinator"
+                    name="Coordinator"
+                    
+                  />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="projectTitle">Editor (Proofing)</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="proofer"
+                    name="proofer"
+                    
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="projectTitle">Illustrator (Text)</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="IlusText"
+                    name="IlusText"
+                    
+                  />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="projectTitle">Illustrator (Cover)</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="IlusCover"
+                    name="IlusCover"
+                    
+                  />
+                </div>
+              </div>
+              <div class="form-group col-md-12">
+                <label for="IlusPages">Number of Illustration (Pages)</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="IlusPages"
+                  name="IlusPages"
+                  min="1"
+                />
+              </div>
+
+              
+              <hr class="hr hr-blurry" />
+              <!--divider-->
+              <h1 class="h3 mb-0 text-gray-800">
+                Design & Layout
+              </h1>
 
               <div class="form-row">
                 <div class="form-group col-md-6">
