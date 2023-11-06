@@ -634,7 +634,7 @@
 
               <div class="form-row">
                 <div class="form-group col-md-12">
-                  <label for="projectTitle">Writer</label>
+                  <label for="Writer">Writer</label>
                   <input
                     type="text"
                     class="form-control"
@@ -646,7 +646,7 @@
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="projectTitle">Editor (Coordinator)</label>
+                  <label for="Editor (Coordinator)">Editor (Coordinator)</label>
                   <input
                     type="text"
                     class="form-control"
@@ -656,7 +656,7 @@
                   />
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="projectTitle">Editor (Proofing)</label>
+                  <label for="Editor (Proofing)">Editor (Proofing)</label>
                   <input
                     type="text"
                     class="form-control"
@@ -668,7 +668,29 @@
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="projectTitle">Illustrator (Text)</label>
+                  <label for="Graphic Designer (Text)">Graphic Designer (Text)</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="designerText"
+                    name="designerText"
+                    
+                  />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="Graphic Designer (Cover)">Graphic Designer (Cover)</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="designerCover"
+                    name="designerCover"
+                    
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="Illustrator (Text)">Illustrator (Text)</label>
                   <input
                     type="text"
                     class="form-control"
@@ -678,7 +700,7 @@
                   />
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="projectTitle">Illustrator (Cover)</label>
+                  <label for="Illustrator (Cover)">Illustrator (Cover)</label>
                   <input
                     type="text"
                     class="form-control"
@@ -689,7 +711,7 @@
                 </div>
               </div>
               <div class="form-group col-md-12">
-                <label for="IlusPages">Number of Illustration (Pages)</label>
+                <label for="Number of Illustration (Pages)">Number of Illustration (Pages)</label>
                 <input
                   type="number"
                   class="form-control"
@@ -699,7 +721,7 @@
                 />
               </div>
 
-              
+
               <hr class="hr hr-blurry" />
               <!--divider-->
               <h1 class="h3 mb-0 text-gray-800">
