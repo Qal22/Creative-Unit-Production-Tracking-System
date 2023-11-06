@@ -530,44 +530,23 @@
             <form>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="graphicDesignerName">Graphic Designer Name</label>
+                  <label for="projectTitle">Project Title</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="graphicDesignerName"
-                    name="graphicDesignerName"
+                    id="projectTitle"
+                    name="projectTitle"
                     required
                   />
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="editorName">Editor Name</label>
+                  <label for="projectSiri">Series</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="editorName"
-                    name="editorName"
-                    required
-                  />
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="freelancerName">Freelancer Name (if any)</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="freelancerName"
-                  name="freelancerName"
-                />
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="bookTitle">Book Title</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="bookTitle"
-                    name="bookTitle"
-                    required
+                    id="projectSiri"
+                    name="projectSiri"
+          
                   />
                 </div>
                 <div class="form-group col-md-6">
@@ -581,30 +560,65 @@
                     <option value="" selected disabled>
                       Please select the category
                     </option>
+                    <option value="Novel Graphic (1/2 Color)">Novel Graphic (1/2 Color)</option>
+                    <option value="Novel Graphic (4 Cover)">Novel Graphic (4 Cover)</option>
                     <option value="Poster">Poster</option>
-                    <option value="Novel">Novel</option>
                     <option value="Komik">Komik</option>
                     <option value="Edukomik">Edukomik</option>
+                    <option value="Aktiviti">Aktiviti</option>
+                    <option value="Non-Fiction">Non-Fiction</option>
+                    <option value="Mega (Hardcover)">Mega (Hardcover)</option>
+                    <option value="Workbook / Academic">Workbook / Academic</option>
+                    <option value="ABM (Others)">ABM (Others)</option>
                   </select>
+                </div>
+              </div>
+              
+              
+              <div class="form-row">
+                
+                <div class="form-group col-md-6">
+                  <label for="projectSize">Project Size</label>
+                  <select
+                    class="form-control"
+                    id="projectSize"
+                    name="projectSize"
+                    
+                  >
+                    <option value="" selected disabled>
+                      Please select the type
+                    </option>
+                    <option value="A4">A4</option>
+                    <option value="A5">A5</option>
+                    <option value="A6">A6</option>
+                    <option value="B5">B5</option>
+                    <option value="B6">B6</option>
+                    <option value="6x9">6" x 9"</option>
+                    <option value="7.5x10">7.5" x 10"</option>
+                    <option value="8x8">8" x 8"</option>
+                    <option value="10x10">10" x 10"</option>
+                    <option value="Others">Others</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="totalPages">Total Pages</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="totalPages"
+                    name="totalPages"
+                    min="1"
+                    
+                  />
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="siriName">Series Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="siriName"
-                    name="siriName"
-                    required
-                  />
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="typeOfDesign">Type of Design</label>
+                  <label for="typeDesign">Type of Design</label>
                   <select
                     class="form-control"
-                    id="typeOfDesign"
-                    name="typeOfDesign"
+                    id="typeDesign"
+                    name="typeDesign"
                     required
                   >
                     <option value="" selected disabled>
@@ -615,19 +629,33 @@
                     <option value="Illustration">Illustration</option>
                   </select>
                 </div>
-              </div>
-              <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="totalPages">Total Pages</label>
-                  <input
-                    type="number"
+                  <label for="Finishing">Finish</label>
+                  <select
                     class="form-control"
-                    id="totalPages"
-                    name="totalPages"
-                    min="1"
-                    required
-                  />
+                    id="Finishing"
+                    name="Finishing"
+                    
+                  >
+                    <option value="" selected disabled>
+                      Please select the type
+                    </option>
+                    <option value="UV">UV</option>
+                    <option value="SPOT UV">SPOT UV</option>
+                    <option value="GLITTER">GLITTER</option>
+                    <option value="EMBOSS">EMBOSS</option>
+                    <option value="PERFECT BINDING">PERFECT BINDING</option>
+                    <option value="PIN BINDING">PIN BINDING</option>
+                    <option value="WIRE O">WIRE O</option>
+                    <option value="SOFT COVER">SOFT COVER</option>
+                    <option value="HARD COVER">HARD COVER</option>
+                    <option value="BOX / PLASTIC PACKAGING">BOX / PLASTIC PACKAGING</option>
+                  </select>
                 </div>
+
+              </div>
+
+              <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="targetFinish">Target to Finish (Design & Layout)</label>
                   <input
