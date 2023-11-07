@@ -1,8 +1,43 @@
+/* Change sidebar color to pink */
 .bg-gradient-secondary {
-    background: #f2d9e0;
-  }
-/* Change the font color of all links within the sidebar to black */
-.sidebar-dark .bg-gradient-secondary a {
-    color: #000; /* Black */
+    background: #ff8fab;
   }
 
+/* Change the font color of all sidebar text to black */
+.navbar-nav.bg-gradient-secondary.sidebar.sidebar-dark.accordion .nav-link {
+    color: #000; /* Black */
+}
+
+.topbar {
+    background-color: #ffadc2;
+    color: #000;
+}
+
+/* Title font size on top bar */
+.responsive-title {
+    text-align: center;
+    font-size: 24px; /* Adjust the font size as needed for responsiveness */
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Small screens (e.g., smartphones) */
+@media (max-width: 767px) {
+    .responsive-title {
+        font-size: 18px; /* Adjust the font size for small screens */
+    }
+}
+/* Medium screens (e.g., tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .responsive-title {
+        font-size: 20px; /* Adjust the font size for medium screens */
+    }
+}
+/* Large screens (e.g., desktops) */
+@media (min-width: 1024px) {
+    .responsive-title {
+        font-size: 24px; /* Default font size for large screens */
+    }
+}
