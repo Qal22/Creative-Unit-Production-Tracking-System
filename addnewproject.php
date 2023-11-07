@@ -725,22 +725,282 @@
               <hr class="hr hr-blurry" />
               <!--divider-->
               <h1 class="h3 mb-0 text-gray-800">
-                Design & Layout
+                Design & Layout - Action Item
               </h1>
 
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="targetFinish">Target to Finish (Design & Layout)</label>
-                  <input
+              <table>
+                <tr><th>Action Items</th><th>Start Date</th><th>Target Date</th><th>Actual Date</th><th>Status</th></tr>
+                <tr>
+                <td>Manuscript Readiness</td>
+                  <td><input
                     type="date"
                     class="form-control"
-                    id="targetFinish"
-                    name="targetFinish"
+                    id="MRStartDate"
+                    name="MRStartDate"
                     min="<?php echo date('Y-m-d'); ?>"
-                    required
-                  />
-                </div>
-              </div>
+                    
+                  /></td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="MRTargetDate"
+                    name="MRTargetDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="MRActualDate"
+                    name="MRActualDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                  type="number"
+                  class="form-control"
+                  id="MRStatus"
+                  name="MRStatus"
+                  
+                /></td>
+                </tr>
+                  
+                <tr>
+                  <td>Concept Development</td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="CDStartDate"
+                    name="CDStartDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="CDTargetDate"
+                    name="CDTargetDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="CDActualDate"
+                    name="CDActualDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                  type="number"
+                  class="form-control"
+                  id="CDStatus"
+                  name="CDStatus"
+                  
+                /></td>
+                </tr>
+                <tr><td>Illustration (Text)</td>
+                <td><input
+                    type="date"
+                    class="form-control"
+                    id="ITStartDate"
+                    name="ITStartDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="ITTargetDate"
+                    name="ITTargetDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="ITActualDate"
+                    name="ITActualDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                  type="number"
+                  class="form-control"
+                  id="ITStatus"
+                  name="ITStatus"
+                  
+                /></td>
+                </tr>
+                  <tr><td>Illustration (Cover)</td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="ICStartDate"
+                    name="ICStartDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="ICTargetDate"
+                    name="ICTargetDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="ICActualDate"
+                    name="ICActualDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                  type="number"
+                  class="form-control"
+                  id="ICStatus"
+                  name="ICStatus"
+                  
+                /></td>
+                </tr>
+                <tr>
+                  <td>Graphic Layout (Text)</td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="GLTStartDate"
+                    name="GLTStartDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="GLTTargetDate"
+                    name="GLTTargetDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="GLTActualDate"
+                    name="GLTActualDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                  type="number"
+                  class="form-control"
+                  id="GLTStatus"
+                  name="GLTStatus"
+                  
+                /></td>
+                </tr>
+                <tr><td>Graphic Layout (Cover)</td>
+                <td><input
+                    type="date"
+                    class="form-control"
+                    id="GLCStartDate"
+                    name="GLCStartDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="GLCTargetDate"
+                    name="GLCTargetDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="GLCActualDate"
+                    name="GLCActualDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                  type="number"
+                  class="form-control"
+                  id="GLCStatus"
+                  name="GLCStatus"
+                  
+                /></td>
+                </tr>
+                <tr><td>Proofing & Correction</td>
+                <td><input
+                    type="date"
+                    class="form-control"
+                    id="PCStartDate"
+                    name="PCStartDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="PCTargetDate"
+                    name="PCTargetDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="PCActualDate"
+                    name="PCActualDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                  type="number"
+                  class="form-control"
+                  id="PCStatus"
+                  name="PCStatus"
+                  
+                /></td>
+                </tr>
+                <tr><td>PDP & ISBN Application</td>
+                <td><input
+                    type="date"
+                    class="form-control"
+                    id="PDPStartDate"
+                    name="PDPStartDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="PDPTargetDate"
+                    name="PDPTargetDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                    type="date"
+                    class="form-control"
+                    id="PDPActualDate"
+                    name="PDPActualDate"
+                    min="<?php echo date('Y-m-d'); ?>"
+                    
+                  /></td>
+                  <td><input
+                  type="number"
+                  class="form-control"
+                  id="PDPStatus"
+                  name="PDPStatus"
+                  
+                /></td>
+                </tr>
+              </table>
+
+              
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
           </div>
