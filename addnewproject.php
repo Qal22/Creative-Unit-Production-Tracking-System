@@ -627,11 +627,11 @@
 
               <hr class="hr hr-blurry" />
               <!--divider-->
-
+              <div class="d-sm-flex align-items-center justify-content-between mb-4">
               <h1 class="h3 mb-0 text-gray-800">
                 Project Members
               </h1>
-
+              </div>
               <div class="form-row">
                 <div class="form-group col-md-12">
                   <label for="Writer">Writer</label>
@@ -724,13 +724,18 @@
 
               <hr class="hr hr-blurry" />
               <!--divider-->
+              <div class="d-sm-flex align-items-center justify-content-between mb-4">
               <h1 class="h3 mb-0 text-gray-800">
                 Design & Layout - Action Item
               </h1>
-
+              </div>
               <table>
                 <tr><th>Action Items</th><th>Start Date</th><th>Target Date</th><th>Actual Date</th><th>Status</th></tr>
                 <tr>
+                <tr><td colspan="5">
+                <hr class="hr hr-blurry" />
+                <!--divider-->
+                </td></tr>
                 <td>Manuscript Readiness</td>
                   <td><input
                     type="date"
