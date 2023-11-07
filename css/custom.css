@@ -1,0 +1,7 @@
+.bg-gradient-secondary {
+    background: #f2d9e0;
+  }
+/* Change the font color of all links within the sidebar to black */
+.sidebar-dark .bg-gradient-secondary a {
+    color: #000; /* Black */
+  }
