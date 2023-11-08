@@ -8,14 +8,14 @@ if (isset($_POST["submit"]))
   {
     echo "<script>
     alert('Succeeded');
-    document.location.href = 'admin.php';
+    document.location.href = 'addnewproject.php';
     </script>";
   }
   else
   {
     echo "<script>
     alert('Failed');
-    document.location.href = 'admin.php';
+    document.location.href = 'addnewproject.php';
     </script>";
   }
 }

@@ -1,36 +1,45 @@
 <?php
 
-$dbc=mysqli_connect("localhost" , "root" , "" , "cup tracking");
+$dbc=mysqli_connect("localhost", "root", "", "cup tracking");
 if(mysqli_connect_errno())
 {
     echo"Database Connection Error" .mysqli_connect_error($dbc);
 }
 
-$xtitle=$_POST['projectTitle'];
-$xsiri=$_POST['projectSiri'];
-$xcategory=$_POST['typeofCategory'];
-$xsize=$_POST['projectSize'];
-$xpages=$_POST['totalPages'];
-$xdesign=$_POST['typeDesign'];
-$xfinishing=$_POST['finishing'];
-
-$sqlin= "INSERT INTO `project` (`projectID`, `Title`, `Siri`, `Category`, `typeOfDesign` , `typeOfFinishing` , `ProjectSize` , `TotalPages`) VALUES ('$xtitle', '$xsiri', '$xcategory', '$xdesign', '$xfinishing','$xsize','$xpages');";
-$chkerr=mysqli_query($dbc,$sqlin);
-
-	if (false==$chkerr) 
+function query($query)
+{
+	global $dbc;
+	
+	$result  = mysqli_query($dbc,$query);
+	
+	$rows = [];
+	
+	while ($row = mysqli_fetch_assoc($result))
 	{
-		// to display error...
-		echo mysqli_error($dbc);
+		$rows[] = $row;
 	}
-	if ($chkerr) 
-	{
-		print "<script>alert('One Record Been Added')</script>";
-		print '<script>window.location.assign("addnewproject.php");</script>';
-	}
-	else
-	{
-		print "<script>alert('Warning : No Record Been Added')</script>";
-	}
+	
+	return $rows;
+}
 
+function addprod($data)
+{
+	global $dbc;
+	
+	$title = $data["projectTitle"];
+	$siri = $data["projectSiri"];
+	$category = $data["typeOfCategory"];
+	$size = $data["projectSize"];
+	$pages = $data["totalPages"];
+	$design = $data["typeDesign"];
+	$finishing = $data["finishing"];
+	$dummy = "Dummy Value";
+	
+	$query = "INSERT INTO project VALUES ('','$title','$siri','$category','$design','$finishing','$size','$pages','$dummy','$dummy','$dummy','$dummy')";
+	
+	mysqli_query($dbc, $query);
+	
+	return mysqli_affected_rows($dbc);
+}
 
 ?>
