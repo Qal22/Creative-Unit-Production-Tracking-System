@@ -729,8 +729,14 @@
                 Design & Layout - Action Item
               </h1>
               </div>
-              <table>
-                <tr><th>Action Items</th><th>Start Date</th><th>Target Date</th><th>Actual Date</th><th>Status</th></tr>
+              <div class="d-sm-flex align-items-center justify-content-between mb-4">
+              <table width="80%" align="center">
+                <col style="width:35%">
+                <col style="width:10%">
+                <col style="width:10%">
+                <col style="width:10%">
+                <col style="width:15%">
+                <tr align=center><th>Action Items</th><th>Start Date</th><th>Target Date</th><th>Actual Date</th><th>Status</th></tr>
                 <tr>
                 <tr><td colspan="5">
                 <hr class="hr hr-blurry" />
@@ -1004,9 +1010,10 @@
                 /></td>
                 </tr>
               </table>
-
+              </div>
               
               <button type="submit" class="btn btn-primary">Submit</button>
+              
             </form>
           </div>
           <!-- /.container-fluid -->
