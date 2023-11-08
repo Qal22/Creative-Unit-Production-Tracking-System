@@ -1,6 +1,6 @@
 <?php 
 
-//require 'databasefx.php';
+require 'databasefx.php';
 
 if (isset($_POST["submit"]))
 {
