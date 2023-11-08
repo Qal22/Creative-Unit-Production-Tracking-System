@@ -13,6 +13,11 @@
     color: #000;
 }
 
+.custom-footer {
+    background-color: #ffadc2;
+    color: #000;
+}
+
 /* Title font size on top bar */
 .responsive-title {
     text-align: center;
