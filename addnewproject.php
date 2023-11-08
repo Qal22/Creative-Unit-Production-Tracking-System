@@ -121,37 +121,18 @@
               <div class="form-row">
                 <div class="form-group col-md-12">
                   <label for="projectTitle">Project Title</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="projectTitle"
-                    name="projectTitle"
-                    required
-                  />
+                  <input type="text" class="form-control" id="projectTitle" name="projectTitle" required/>
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="projectSiri">Series</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="projectSiri"
-                    name="projectSiri"
-          
-                  />
+                  <input type="text" class="form-control" id="projectSiri" name="projectSiri"/>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="typeOfCategory">Type of Category</label>
-                  <select
-                    class="form-control"
-                    id="typeOfCategory"
-                    name="typeOfCategory"
-                    required
-                  >
-                    <option value="" selected disabled>
-                      Please select the category
-                    </option>
+                  <select class="form-control" id="typeOfCategory" name="typeOfCategory" required>
+                    <option value="" selected disabled>Please select the category</option>
                     <option value="Novel Graphic (1/2 Color)">Novel Graphic (1/2 Color)</option>
                     <option value="Novel Graphic (4 Cover)">Novel Graphic (4 Cover)</option>
                     <option value="Poster">Poster</option>
@@ -257,90 +238,42 @@
               <div class="form-row">
                 <div class="form-group col-md-12">
                   <label for="Writer">Writer</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="Writer"
-                    name="Writer"
-                    
-                  />
+                  <input type="text" class="form-control" id="Writer" name="Writer"/>
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="Editor (Coordinator)">Editor (Coordinator)</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="Coordinator"
-                    name="Coordinator"
-                    
-                  />
+                  <label for="coordinator">Editor (Coordinator)</label>
+                  <input type="text" class="form-control" id="coordinator" name="coordinator"/>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="Editor (Proofing)">Editor (Proofing)</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="proofer"
-                    name="proofer"
-                    
-                  />
+                  <label for="proofing">Editor (Proofing)</label>
+                  <input type="text" class="form-control" id="proofing" name="proofing"/>
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="Graphic Designer (Text)">Graphic Designer (Text)</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="designerText"
-                    name="designerText"
-                    
-                  />
+                  <label for="designerText">Graphic Designer (Text)</label>
+                  <input type="text" class="form-control" id="designerText" name="designerText"/>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="Graphic Designer (Cover)">Graphic Designer (Cover)</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="designerCover"
-                    name="designerCover"
-                    
-                  />
+                  <label for="designerCover">Graphic Designer (Cover)</label>
+                  <input type="text" class="form-control" id="designerCover" name="designerCover"/>
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="Illustrator (Text)">Illustrator (Text)</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="IlusText"
-                    name="IlusText"
-                    
-                  />
+                  <label for="IlusText">Illustrator (Text)</label>
+                  <input type="text" class="form-control" id="IlusText" name="IlusText"/>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="Illustrator (Cover)">Illustrator (Cover)</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="IlusCover"
-                    name="IlusCover"
-                    
-                  />
+                  <label for="IlusCover">Illustrator (Cover)</label>
+                  <input type="text" class="form-control" id="IlusCover" name="IlusCover"/>
                 </div>
               </div>
               <div class="form-group col-md-13">
-                <label for="Number of Illustration (Pages)">Number of Illustration (Pages)</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="IlusPages"
-                  name="IlusPages"
-                  min="1"
-                />
+                <label for="IlusPages">Number of Illustration (Pages)</label>
+                <input type="number" class="form-control" id="IlusPages" name="IlusPages" min="1"/>
               </div>
 
 
