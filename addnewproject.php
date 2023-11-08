@@ -1,3 +1,26 @@
+<?php 
+
+//require 'databasefx.php';
+
+if (isset($_POST["submit"]))
+{
+  if (addprod($_POST) > 0)
+  {
+    echo "<script>
+    alert('Succeeded');
+    document.location.href = 'admin.php';
+    </script>";
+  }
+  else
+  {
+    echo "<script>
+    alert('Failed');
+    document.location.href = 'admin.php';
+    </script>";
+  }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -117,7 +140,7 @@
                 Add New Project To Production
               </h1>
             </div>
-            <form>
+            <form action="" method="post" enctype="multipart/form-data">
               <div class="form-row">
                 <div class="form-group col-md-12">
                   <label for="projectTitle">Project Title</label>
@@ -567,7 +590,7 @@
               </table>
               </div>
               
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" name="submit" class="btn btn-primary">Submit</button>
               
             </form>
           </div>
