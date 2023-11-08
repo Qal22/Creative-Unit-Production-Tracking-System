@@ -710,7 +710,7 @@
                   />
                 </div>
               </div>
-              <div class="form-group col-md-12">
+              <div class="form-group col-md-13">
                 <label for="Number of Illustration (Pages)">Number of Illustration (Pages)</label>
                 <input
                   type="number"
