@@ -141,7 +141,7 @@
             <footer class="sticky-footer custom-footer">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; 2023 Ana Muslim Sdn Bhd. All rightsreserved.</span>
                     </div>
                 </div>
             </footer>
@@ -149,6 +149,7 @@
         </div>
         <!-- End of Content Wrapper -->
     </div>
+    <!-- End of Page Wrapper -->
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
