@@ -33,7 +33,7 @@ function addprod($data)
 	$pages = $data["totalPages"];
 	$design = $data["typeDesign"];
 	$finishing = $data["finishing"];
-	$dummy = "Dummy Value";
+	$dummy = "1";
 	
 	$query = "INSERT INTO project VALUES ('','$title','$siri','$category','$design','$finishing','$size','$pages','$dummy','$dummy','$dummy','$dummy')";
 	

@@ -120,15 +120,39 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Title</th>
+                                            <th>Series</th>
+                                            <th>Category</th>
+                                            <th>Size</th>
+                                            <th>Total Pages</th>
+                                            <th>Type of Design</th>
+                                            <th>Finishing</th>
                                         </tr>
                                     </thead>
+
+                                    <?php
+                                    include "databasefx.php";
+                                    $sql="SELECT * FROM project";
+                                    $result = mysqli_query($dbc,$sql);
+                                    while($row =mysqli_fetch_assoc($result))
+                                    {
+                                        echo
+                                        '<tr>
+                                            <td>'.$row['Title'].'</td>
+                                            <td>'.$row['Siri'].'</td>
+                                            <td>'.$row['Category'].'</td>
+                                            <td>'.$row['ProjectSize'].'</td>
+                                            <td>'.$row['TotalPages'].'</td>
+                                            <td>'.$row['typeOfDesign'].'</td>
+                                            <td>'.$row['typeOfFinishing'].'</td>
+                                        </tr>';
+
+                                    }
+                                    ?>
+
                                 </table>
+
+                                
                             </div>
                         </div>
                     </div>
