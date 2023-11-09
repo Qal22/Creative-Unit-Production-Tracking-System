@@ -4,10 +4,25 @@ require 'databasefx.php';
 
 if (isset($_POST["submit"]))
 {
-  if (addproject($_POST) > 0)
+  if (addproject($_POST) > 0 || addmilestone($_POST) > 0)
   {
     echo "<script>
     alert('Succeeded');
+    document.location.href = 'addnewproject.php';
+    </script>";
+  }
+  else
+  {
+    echo "<script>
+    alert('Failed');
+    document.location.href = 'addnewproject.php';
+    </script>";
+  }
+
+  if (addmilestone($_POST) > 0)
+  {
+    echo "<script>
+    alert('Succeeded milestone');
     document.location.href = 'addnewproject.php';
     </script>";
   }
@@ -65,7 +80,7 @@ if (isset($_POST["submit"]))
         <hr class="sidebar-divider my-0" />
 
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="index.html">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
@@ -227,12 +242,7 @@ if (isset($_POST["submit"]))
                 </div>
                 <div class="form-group col-md-6">
                   <label for="Finishing">Finishing</label>
-                  <select
-                    class="form-control"
-                    id="Finishing"
-                    name="Finishing"
-                    
-                  >
+                  <select class="form-control" id="Finishing" name="Finishing">
                     <option value="" selected disabled>
                       Please select the type
                     </option>

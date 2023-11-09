@@ -34,7 +34,18 @@ function addproject($data)
 	$design = $data["typeDesign"];
 	$finishing = $data["finishing"];
 	$dummy = "1";
+
+	$query = "INSERT INTO project VALUES ('','$title','$siri','$category','$design','$finishing','$size','$pages','$dummy','$dummy','$dummy','$dummy')";
 	
+	mysqli_query($dbc, $query);
+	
+	return mysqli_affected_rows($dbc);
+}
+
+function addmilestone()
+{
+	global $dbc;
+
 	$actionItemMR = "Manuscript Readiness";
 	$startDateMR = $data["MRStartDate"];
 	$targetDateMR = $data["MRTargetDate"];
@@ -83,17 +94,16 @@ function addproject($data)
 	$actualDatePDP = $data["PDPActualDate"];
 	$statusPDP = $data["PDPStatus"];
 
-	$query = "INSERT INTO project VALUES ('','$title','$siri','$category','$design','$finishing','$size','$pages','$dummy','$dummy','$dummy','$dummy')";
+	$query = "INSERT INTO dl_milestones VALUES
+			('','$actionItemMR','$startDateMR','$targetDateMR','$actualDateMR','$statusMR'),
+			('','$actionItemCD','$startDateCD','$targetDateCD','$actualDateCD','$statusCD'),
+            ('','$actionItemIT','$startDateIT','$targetDateIT','$actualDateIT','$statusIT'),
+            ('','$actionItemIC','$startDateIC','$targetDateIC','$actualDateIC','$statusIC'),
+            ('','$actionItemGLT','$startDateGLT','$targetDateGLT','$actualDateGLT','$statusGLT'),
+            ('','$actionItemGLC','$startDateGLC','$targetDateGLC','$actualDateGLC','$statusGLC'),
+            ('','$actionItemPC','$startDatePC','$targetDatePC','$actualDatePC','$statusPC'),
+            ('','$actionItemPDP','$startDatePDP','$targetDatePDP','$actualDatePDP','$statusPDP')";
 	
-	$queryMS = "INSERT INTO dl_milestones VALUES ('','$actionItemMR','$startDateMR','$targetDateMR','$actualDateMR','$statusMR')";
-	$queryMS2 = "INSERT INTO dl_milestones VALUES ('','$actionItemCD','$startDateCD','$targetDateCD','$actualDateCD','$statusCD')";
-	$queryMS3 = "INSERT INTO dl_milestones VALUES ('','$actionItemIT','$startDateIT','$targetDateIT','$actualDateIT','$statusIT')";
-	$queryMS4 = "INSERT INTO dl_milestones VALUES ('','$actionItemIC','$startDateIC','$targetDateIC','$actualDateIC','$statusIC')";
-	$queryMS5 = "INSERT INTO dl_milestones VALUES ('','$actionItemGLT','$startDateGLT','$targetDateGLT','$actualDateGLT','$statusGLT')";
-	$queryMS6 = "INSERT INTO dl_milestones VALUES ('','$actionItemGLC','$startDateGLC','$targetDateGLC','$actualDateGLC','$statusGLC')";
-	$queryMS7 = "INSERT INTO dl_milestones VALUES ('','$actionItemPC','$startDatePC','$targetDatePC','$actualDatePC','$statusPC')";
-	$queryMS8 = "INSERT INTO dl_milestones VALUES ('','$actionItemPDP','$startDatePDP','$targetDatePDP','$actualDatePDP','$statusPDP')";
-
 	mysqli_query($dbc, $query);
 	
 	return mysqli_affected_rows($dbc);
