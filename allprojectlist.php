@@ -127,6 +127,8 @@
                                             <th>Total Pages</th>
                                             <th>Type of Design</th>
                                             <th>Finishing</th>
+                                            <th>Action</th> 
+                                            
                                         </tr>
                                     </thead>
 
@@ -145,6 +147,23 @@
                                             <td>'.$row['TotalPages'].'</td>
                                             <td>'.$row['typeOfDesign'].'</td>
                                             <td>'.$row['typeOfFinishing'].'</td>
+
+                                            <td> 
+                                                <a href="updatedesignlayout.php?projectTitle='.$row['Title'].'" class="btn btn-info btn-icon-split">
+                                                    <span class="icon text-white-50">
+                                                    <i class="fas fa-fw fa-cog"></i>
+                                                    </span>
+                                                <span class="text">Update</span>
+                                                </a>
+
+                                                <a href="#" class="btn btn-danger btn-icon-split">
+                                                    <span class="icon text-white-50">
+                                                    <i class="fas fa-trash"></i>
+                                                    </span>
+                                                <span class="text">Delete</span>
+                                                </a>
+
+                                            </td>
                                         </tr>';
 
                                     }
