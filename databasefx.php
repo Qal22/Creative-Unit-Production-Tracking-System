@@ -22,7 +22,7 @@ function query($query)
 	return $rows;
 }
 
-function addprod($data)
+function addproject($data)
 {
 	global $dbc;
 	

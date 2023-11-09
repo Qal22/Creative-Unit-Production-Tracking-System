@@ -4,7 +4,7 @@ require 'databasefx.php';
 
 if (isset($_POST["submit"]))
 {
-  if (addproject($_POST) > 0)
+  if (addprod($_POST) > 0)
   {
     echo "<script>
     alert('Succeeded');
@@ -592,9 +592,45 @@ if (isset($_POST["submit"]))
               </table>
               </div>
 
+              <hr class="hr hr-blurry" />
+              <!--divider-->
+              <div class="d-sm-flex align-items-center justify-content-between mb-4">
+              <h1 class="h3 mb-0 text-gray-800">
+                Design & Layout Progress Update
+              </h1>
+              </div>
+
+              <div class="form-row">
+              <div class="form-group col-md-6">
+                  <label for="approvalStatus">Approval Status</label>
+                  <select
+                    class="form-control"
+                    id="approvalStatus"
+                    name="approvalStatus"
+                    required
+                  >
+                    <option value="" selected disabled>
+                      Please select the type
+                    </option>
+                    <option value="Not Yet Proposed">Not Yet Proposed</option>
+                    <option value="Pending Approval">Pending Approval</option>
+                    <option value="Approved">Approved</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                <label for="progressPercent">Progress (%)</label>
+                <input type="number" class="form-control" id="progressPercent" name="progressPercent" min="0" max="100"/>
+                </div>
+                </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label for="projectCover">Project Cover</label>
+                  <input type="file" class="form-control" id="projectCover" name="projectCover"/>
+                </div>
+              </div>
               
-              
-              <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" name="submit" class="btn btn-primary">Update</button>
               
             </form>
           </div>
