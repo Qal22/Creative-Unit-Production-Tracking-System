@@ -2,6 +2,8 @@
 
 require 'databasefx.php';
 
+$personnels = query("SELECT * FROM personnel");
+
 if (isset($_POST["submit"]))
 {
   if (addproject($_POST) > 0 || addmilestone($_POST) > 0)
@@ -277,11 +279,33 @@ if (isset($_POST["submit"]))
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="coordinator">Editor (Coordinator)</label>
-                  <input type="text" class="form-control" id="coordinator" name="coordinator"/>
+                  <select class="form-control" id="coordinator" name="coordinator" required>
+                    <option value="" selected disabled>Please select the type</option>
+                    <?php
+                    foreach($personnels as $personnel) :
+                      if ($personnel["position"] == "Editor")
+                      {
+                        echo "<option value='" . $personnel["personnelId"] . "'>" . $personnel["name"] . "</option>";
+                      }
+                      
+                    endforeach; ?>
+                    ?>
+                  </select>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="proofing">Editor (Proofing)</label>
-                  <input type="text" class="form-control" id="proofing" name="proofing"/>
+                  <select class="form-control" id="proofing" name="proofing" required>
+                    <option value="" selected disabled>Please select the type</option>
+                    <?php
+                    foreach($personnels as $personnel) :
+                      if ($personnel["position"] == "Editor")
+                      {
+                        echo "<option value='" . $personnel["personnelId"] . "'>" . $personnel["name"] . "</option>";
+                      }
+                      
+                    endforeach; ?>
+                    ?>
+                  </select>
                 </div>
               </div>
               <div class="form-row">
