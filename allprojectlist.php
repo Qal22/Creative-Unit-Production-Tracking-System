@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,7 @@
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    
+
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
@@ -20,6 +21,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 </head>
+
 <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -29,7 +31,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon">
-                    <img src="img/logoanamuslim.png" alt="Your Logo" style="height: 44px; width: 64px"/>
+                    <img src="img/logoanamuslim.png" alt="Your Logo" style="height: 44px; width: 64px" />
                 </div>
             </a>
 
@@ -99,7 +101,7 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-                    
+
                     <h1 class="responsive-title">Creative Unit Production Tracking System</h1>
                 </nav>
                 <!-- End of Topbar -->
@@ -113,7 +115,43 @@
                     <!-- DataTables -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-dark">Details of Projects</h6>
+                            <div class="form-row justify-content-between align-items-center">
+                                <h5 class="m-0 font-weight-bold text-dark">Details of Projects</h5>
+                                <li class="nav-item dropdown no-arrow mx-1">
+                                    <a href="#" class="btn btn-secondary btn-icon-split nav-link dropdown-toggle ml-auto" id="sortingDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-fw fa-tasks"></i>
+                                        </span>
+                                        <span class="text">Sort by Project</span>
+                                    </a>
+
+                                    <!-- Dropdown - Sorting -->
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="sortingDropdown">
+                                        <a class="dropdown-item" href="allprojectlist.php">
+                                            <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            sort by Project
+                                        </a>
+                                        <a class="dropdown-item" href="sortprogresslist.php">
+                                            <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            sort by Progress
+                                        </a>
+                                        <a class="dropdown-item" href="sorteditorlist.php">
+                                            <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            sort by Editor
+                                        </a>
+                                        <a class="dropdown-item" href="sortdesignerlist.php">
+                                            <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            sort by Graphic Designer
+                                        </a>
+                                        <a class="dropdown-item" href="sortillustratorlist.php">
+                                            <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            sort by Illustrator
+                                        </a>
+                                        
+
+                                    </div>
+                                </li>
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -127,29 +165,28 @@
                                             <th>Total Pages</th>
                                             <th>Type of Design</th>
                                             <th>Finishing</th>
-                                            <th>Action</th> 
-                                            
+                                            <th>Action</th>
+
                                         </tr>
                                     </thead>
 
                                     <?php
                                     include "databasefx.php";
-                                    $sql="SELECT * FROM project";
-                                    $result = mysqli_query($dbc,$sql);
-                                    while($row =mysqli_fetch_assoc($result))
-                                    {
+                                    $sql = "SELECT * FROM project";
+                                    $result = mysqli_query($dbc, $sql);
+                                    while ($row = mysqli_fetch_assoc($result)) {
                                         echo
                                         '<tr>
-                                            <td>'.$row['Title'].'</td>
-                                            <td>'.$row['Siri'].'</td>
-                                            <td>'.$row['Category'].'</td>
-                                            <td>'.$row['ProjectSize'].'</td>
-                                            <td>'.$row['TotalPages'].'</td>
-                                            <td>'.$row['typeOfDesign'].'</td>
-                                            <td>'.$row['typeOfFinishing'].'</td>
+                                            <td>' . $row['Title'] . '</td>
+                                            <td>' . $row['Siri'] . '</td>
+                                            <td>' . $row['Category'] . '</td>
+                                            <td>' . $row['ProjectSize'] . '</td>
+                                            <td>' . $row['TotalPages'] . '</td>
+                                            <td>' . $row['typeOfDesign'] . '</td>
+                                            <td>' . $row['typeOfFinishing'] . '</td>
 
                                             <td> 
-                                                <a href="updatedesignlayout.php?projectTitle='.$row['Title'].'" class="btn btn-info btn-icon-split">
+                                                <a href="updatedesignlayout.php?projectTitle=' . $row['Title'] . '" class="btn btn-info btn-icon-split">
                                                     <span class="icon text-white-50">
                                                     <i class="fas fa-fw fa-cog"></i>
                                                     </span>
@@ -165,13 +202,12 @@
 
                                             </td>
                                         </tr>';
-
                                     }
                                     ?>
 
                                 </table>
 
-                                
+
                             </div>
                         </div>
                     </div>
@@ -202,4 +238,5 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 </body>
+
 </html>
