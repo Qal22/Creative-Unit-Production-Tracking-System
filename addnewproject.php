@@ -153,12 +153,12 @@ if (isset($_POST["submit"])) {
               Add New Project To Production
             </h1>
           </div>
-          <form action="" method="post" enctype="multipart/form-data">
-            <div class="form-group col-md-12">
+          <form action="designlayout.php" method="post" enctype="multipart/form-data">
+            <div class="form-group col-md-13">
               <label for="projectTitle">Project Title</label>
               <input type="text" class="form-control" id="projectTitle" name="projectTitle" required />
             </div>
-        </div>
+        
         <div class="form-row">
 
           <div class="form-group col-md-6">
@@ -358,14 +358,15 @@ if (isset($_POST["submit"])) {
 
 
         <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+        
 
         </form>
-      </div>
+        </div>
       <!-- /.container-fluid -->
     </div>
     <!-- End of Main Content -->
     <br />
-    <!-- Footer 
+    <!-- Footer -->
     <footer class="sticky-footer custom-footer">
       <div class="container my-auto">
         <div class="copyright text-center my-auto">
@@ -374,7 +375,8 @@ if (isset($_POST["submit"])) {
         </div>
       </div>
     </footer>
-    End of Footer -->
+      
+   <!-- End of Footer -->
   </div>
   <!-- End of Content Wrapper -->
   </div>
