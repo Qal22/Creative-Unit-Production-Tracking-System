@@ -70,17 +70,32 @@
                 </a>
                 <div id="collapseReport" class="collapse" aria-labelledby="headingReport" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">sort by Graphic Designer</a>
-                        <a class="collapse-item" href="#">sort by Editor</a>
-                        <a class="collapse-item" href="#">sort by Category</a>
+
                         <a class="collapse-item" href="#">sort by Progress</a>
                         <a class="collapse-item" href="#">Milestones</a>
                     </div>
                 </div>
             </li>
 
+            <!--Change data-target, aria-controls, id, aria-labelledby into other name than any nav-item-->
+            <!-- Nav Item 1 - Pages Collapse Menu -->
+            <li class="nav-item ">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePersonnels" aria-expanded="true" aria-controls="collapseProjectManagement">
+                    <i class="fas fa-fw fa-tasks"></i>
+                    <span>Personnels</span>
+                </a>
+                <div id="collapsePersonnels" class="collapse" aria-labelledby="headingProjectManagement" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="addnewpersonnel.php">Add New Personnel</a>
+                        <a class="collapse-item" href="personnellist.php">All Personnel List</a>
+                    </div>
+                </div>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
+
+
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -117,10 +132,10 @@
                         <div class="card-header py-3">
                             <div class="form-row justify-content-between align-items-center">
                                 <h5 class="m-0 font-weight-bold text-dark">Details of Projects</h5>
-                                <li class="nav-item dropdown no-arrow mx-1">
+                                <ul class="nav-item dropdown no-arrow mx-1">
                                     <a href="#" class="btn btn-secondary btn-icon-split nav-link dropdown-toggle ml-auto" id="sortingDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span class="icon text-white-50">
-                                            <i class="fas fa-fw fa-tasks"></i>
+                                            <i class="fas fa-caret-down"></i>
                                         </span>
                                         <span class="text">Sort by Project</span>
                                     </a>
@@ -147,10 +162,10 @@
                                             <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                             sort by Illustrator
                                         </a>
-                                        
+
 
                                     </div>
-                                </li>
+                                </ul>
                             </div>
                         </div>
                         <div class="card-body">
@@ -177,16 +192,16 @@
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         echo
                                         '<tr>
-                                            <td>' . $row['Title'] . '</td>
-                                            <td>' . $row['Siri'] . '</td>
-                                            <td>' . $row['Category'] . '</td>
-                                            <td>' . $row['ProjectSize'] . '</td>
-                                            <td>' . $row['TotalPages'] . '</td>
+                                            <td>' . $row['title'] . '</td>
+                                            <td>' . $row['siri'] . '</td>
+                                            <td>' . $row['category'] . '</td>
+                                            <td>' . $row['projectSize'] . '</td>
+                                            <td>' . $row['totalPages'] . '</td>
                                             <td>' . $row['typeOfDesign'] . '</td>
                                             <td>' . $row['typeOfFinishing'] . '</td>
 
                                             <td> 
-                                                <a href="updatedesignlayout.php?projectTitle=' . $row['Title'] . '" class="btn btn-info btn-icon-split">
+                                                <a href="updatedesignlayout.php?projectTitle=' . $row['title'] . '" class="btn btn-info btn-icon-split">
                                                     <span class="icon text-white-50">
                                                     <i class="fas fa-fw fa-cog"></i>
                                                     </span>

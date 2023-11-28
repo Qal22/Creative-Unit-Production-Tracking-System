@@ -16,6 +16,11 @@
 .custom-footer {
     background-color: #ffadc2;
     color: #000;
+    
+            padding: 15px;
+            /* Adjust padding as needed */
+        position: fixed;
+            bottom: 0;
 }
 
 /* Title font size on top bar */
@@ -45,4 +50,19 @@
     .responsive-title {
         font-size: 24px; /* Default font size for large screens */
     }
+}
+
+
+/* Add this CSS to your custom.css or within a <style> tag in your HTML */
+
+
+/* Style for a specific row with a custom height */
+.custom-height {
+    height: 750px;
+    /* Adjust the height as needed */
+}
+
+/* Set the footer to stay at the bottom */
+footer {
+    flex-shrink: 0;
 }

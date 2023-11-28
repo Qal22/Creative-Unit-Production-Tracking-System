@@ -2,24 +2,12 @@
 
 require 'databasefx.php';
 
-$personnels = query("SELECT * FROM personnel");
+$qpersonnels = query("SELECT * FROM personnel");
 
 if (isset($_POST["submit"])) {
   if (addproject($_POST) > 0 || addmilestone($_POST) > 0) {
     echo "<script>
     alert('Succeeded');
-    document.location.href = 'addnewproject.php';
-    </script>";
-  } else {
-    echo "<script>
-    alert('Failed');
-    document.location.href = 'addnewproject.php';
-    </script>";
-  }
-
-  if (addmilestone($_POST) > 0) {
-    echo "<script>
-    alert('Succeeded milestone');
     document.location.href = 'addnewproject.php';
     </script>";
   } else {
@@ -107,10 +95,8 @@ if (isset($_POST["submit"])) {
         </a>
         <div id="collapseReport" class="collapse" aria-labelledby="headingReport" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <!--<a class="collapse-item" href="#">sort by Graphic Designer</a>
-            <a class="collapse-item" href="#">sort by Editor</a>
-            <a class="collapse-item" href="#">sort by Category</a>-->
-            <a class="collapse-item" href="#">sort by Progress</a>
+
+            <a class="collapse-item" href="sortprogresslist.php">sort by Progress</a>
             <a class="collapse-item" href="milestonereport.php">Milestones</a>
           </div>
         </div>
@@ -119,11 +105,11 @@ if (isset($_POST["submit"])) {
       <!--Change data-target, aria-controls, id, aria-labelledby into other name than any nav-item-->
       <!-- Nav Item 1 - Pages Collapse Menu -->
       <li class="nav-item active">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProjectManagement" aria-expanded="true" aria-controls="collapseProjectManagement">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePersonnel" aria-expanded="true" aria-controls="collapsePersonnel">
           <i class="fas fa-fw fa-tasks"></i>
           <span>Personnels</span>
         </a>
-        <div id="collapseProjectManagement" class="collapse" aria-labelledby="headingProjectManagement" data-parent="#accordionSidebar">
+        <div id="collapsePersonnel" class="collapse" aria-labelledby="headingPersonnel" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="addnewpersonnel.php">Add New Personnel</a>
             <a class="collapse-item" href="personnellist.php">All Personnel List</a>
@@ -171,10 +157,7 @@ if (isset($_POST["submit"])) {
             </div>
         </div>
         <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="projectSiri">Series</label>
-            <input type="text" class="form-control" id="projectSiri" name="projectSiri" />
-          </div>
+
           <div class="form-group col-md-6">
             <label for="typeOfCategory">Type of Category</label>
             <select class="form-control" id="typeOfCategory" name="typeOfCategory" required>
@@ -190,6 +173,10 @@ if (isset($_POST["submit"])) {
               <option value="Workbook / Academic">Workbook / Academic</option>
               <option value="ABM (Others)">ABM (Others)</option>
             </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="projectSiri">Series</label>
+            <input type="text" class="form-control" id="projectSiri" name="projectSiri" />
           </div>
         </div>
 
@@ -271,7 +258,7 @@ if (isset($_POST["submit"])) {
             <select class="form-control" id="coordinator" name="coordinator" required>
               <option value="" selected disabled>Please select the type</option>
               <?php
-              foreach ($personnels as $personnel) :
+              foreach ($qpersonnels as $personnel) :
                 if ($personnel["position"] == "Editor") {
                   echo "<option value='" . $personnel["personnelId"] . "'>" . $personnel["name"] . "</option>";
                 }
@@ -282,10 +269,10 @@ if (isset($_POST["submit"])) {
           </div>
           <div class="form-group col-md-6">
             <label for="proofing">Editor (Proofing)</label>
-            <select class="form-control" id="proofing" name="proofing" required>
+            <select class="form-control" id="proofing" name="proofing">
               <option value="" selected disabled>Please select the type</option>
               <?php
-              foreach ($personnels as $personnel) :
+              foreach ($qpersonnels as $personnel) :
                 if ($personnel["position"] == "Editor") {
                   echo "<option value='" . $personnel["personnelId"] . "'>" . $personnel["name"] . "</option>";
                 }
@@ -298,21 +285,61 @@ if (isset($_POST["submit"])) {
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="designerText">Graphic Designer (Text)</label>
-            <input type="text" class="form-control" id="designerText" name="designerText" />
+            <select class="form-control" id="designerText" name="designerText" required>
+              <option value="" selected disabled>Please select the type</option>
+              <?php
+              foreach ($qpersonnels as $personnel) :
+                if ($personnel["position"] == "Graphic Designer") {
+                  echo "<option value='" . $personnel["personnelId"] . "'>" . $personnel["name"] . "</option>";
+                }
+
+              endforeach; ?>
+              ?>
+            </select>
           </div>
           <div class="form-group col-md-6">
             <label for="designerCover">Graphic Designer (Cover)</label>
-            <input type="text" class="form-control" id="designerCover" name="designerCover" />
+            <select class="form-control" id="designerCover" name="designerCover">
+              <option value="" selected disabled>Please select the type</option>
+              <?php
+              foreach ($qpersonnels as $personnel) :
+                if ($personnel["position"] == "Graphic Designer") {
+                  echo "<option value='" . $personnel["personnelId"] . "'>" . $personnel["name"] . "</option>";
+                }
+
+              endforeach; ?>
+              ?>
+            </select>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="IlusText">Illustrator (Text)</label>
-            <input type="text" class="form-control" id="IlusText" name="IlusText" />
+            <select class="form-control" id="IlusText" name="IlusText" required>
+              <option value="" selected disabled>Please select the type</option>
+              <?php
+              foreach ($qpersonnels as $personnel) :
+                if ($personnel["position"] == "Illustrator") {
+                  echo "<option value='" . $personnel["personnelId"] . "'>" . $personnel["name"] . "</option>";
+                }
+
+              endforeach; ?>
+              ?>
+            </select>
           </div>
           <div class="form-group col-md-6">
             <label for="IlusCover">Illustrator (Cover)</label>
-            <input type="text" class="form-control" id="IlusCover" name="IlusCover" />
+            <select class="form-control" id="IlusCover" name="IlusCover" >
+              <option value="" selected disabled>Please select the type</option>
+              <?php
+              foreach ($qpersonnels as $personnel) :
+                if ($personnel["position"] == "Illustrator") {
+                  echo "<option value='" . $personnel["personnelId"] . "'>" . $personnel["name"] . "</option>";
+                }
+
+              endforeach; ?>
+              ?>
+            </select>
           </div>
         </div>
 
@@ -323,92 +350,7 @@ if (isset($_POST["submit"])) {
 
 
 
-        <hr class="hr hr-blurry" />
-        <!--divider-->
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-          <h1 class="h3 mb-0 text-gray-800">
-            Design & Layout Milestones
-          </h1>
-        </div>
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-          <table width="80%" align="center">
-            <col style="width:35%">
-            <col style="width:10%">
-            <col style="width:10%">
-            <col style="width:10%">
-            <col style="width:15%">
-            <tr align=center>
-              <th>Action Items</th>
-              <th>Start Date</th>
-              <th>Target Date</th>
-              <th>Actual Date</th>
-              <th>Status</th>
-            </tr>
-            <tr>
-            <tr>
-              <td colspan="5">
-                <hr class="hr hr-blurry" />
-                <!--divider-->
-              </td>
-            </tr>
-            <td>Manuscript Readiness</td>
-            <td><input type="date" class="form-control" id="MRStartDate" name="MRStartDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-            <td><input type="date" class="form-control" id="MRTargetDate" name="MRTargetDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-            <td><input type="date" class="form-control" id="MRActualDate" name="MRActualDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-            <td><input type="number" class="form-control" id="MRStatus" name="MRStatus" /></td>
-            </tr>
 
-            <tr>
-              <td>Concept Development</td>
-              <td><input type="date" class="form-control" id="CDStartDate" name="CDStartDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="date" class="form-control" id="CDTargetDate" name="CDTargetDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="date" class="form-control" id="CDActualDate" name="CDActualDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="number" class="form-control" id="CDStatus" name="CDStatus" /></td>
-            </tr>
-            <tr>
-              <td>Illustration (Text)</td>
-              <td><input type="date" class="form-control" id="ITStartDate" name="ITStartDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="date" class="form-control" id="ITTargetDate" name="ITTargetDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="date" class="form-control" id="ITActualDate" name="ITActualDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="number" class="form-control" id="ITStatus" name="ITStatus" /></td>
-            </tr>
-            <tr>
-              <td>Illustration (Cover)</td>
-              <td><input type="date" class="form-control" id="ICStartDate" name="ICStartDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="date" class="form-control" id="ICTargetDate" name="ICTargetDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="date" class="form-control" id="ICActualDate" name="ICActualDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="number" class="form-control" id="ICStatus" name="ICStatus" /></td>
-            </tr>
-            <tr>
-              <td>Graphic Layout (Text)</td>
-              <td><input type="date" class="form-control" id="GLTStartDate" name="GLTStartDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="date" class="form-control" id="GLTTargetDate" name="GLTTargetDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="date" class="form-control" id="GLTActualDate" name="GLTActualDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="number" class="form-control" id="GLTStatus" name="GLTStatus" /></td>
-            </tr>
-            <tr>
-              <td>Graphic Layout (Cover)</td>
-              <td><input type="date" class="form-control" id="GLCStartDate" name="GLCStartDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="date" class="form-control" id="GLCTargetDate" name="GLCTargetDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="date" class="form-control" id="GLCActualDate" name="GLCActualDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="number" class="form-control" id="GLCStatus" name="GLCStatus" /></td>
-            </tr>
-            <tr>
-              <td>Proofing & Correction</td>
-              <td><input type="date" class="form-control" id="PCStartDate" name="PCStartDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="date" class="form-control" id="PCTargetDate" name="PCTargetDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="date" class="form-control" id="PCActualDate" name="PCActualDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="number" class="form-control" id="PCStatus" name="PCStatus" /></td>
-            </tr>
-            <tr>
-              <td>PDP & ISBN Application</td>
-              <td><input type="date" class="form-control" id="PDPStartDate" name="PDPStartDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="date" class="form-control" id="PDPTargetDate" name="PDPTargetDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="date" class="form-control" id="PDPActualDate" name="PDPActualDate" min="<?php echo date('Y-m-d'); ?>" /></td>
-              <td><input type="number" class="form-control" id="PDPStatus" name="PDPStatus" /></td>
-            </tr>
-          </table>
-        </div>
 
 
 

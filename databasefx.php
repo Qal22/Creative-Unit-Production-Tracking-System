@@ -42,7 +42,7 @@ function addproject($data)
 	return mysqli_affected_rows($dbc);
 }
 
-function addmilestone()
+function addmilestone($data)
 {
 	global $dbc;
 
