@@ -32,10 +32,13 @@ function addproject($data)
 	$size = $data["projectSize"];
 	$pages = $data["totalPages"];
 	$design = $data["typeDesign"];
-	$finishing = $data["finishing"];
-	$dummy = "1";
+	$finishing = $data["typeOfFinishing"];
+	$designer = $data["graphicDesignerId"];
+	$editor = $data["editorId"];
+	$ilus = $data["illustratorId"];
+	$writer = $data["writerName"];
 
-	$query = "INSERT INTO project VALUES ('','$title','$siri','$category','$design','$finishing','$size','$pages','$dummy','$dummy','$dummy','$dummy')";
+	$query = "INSERT INTO project VALUES ('','$title','$siri','$category','$design','$finishing','$size','$pages','$designer','$editor','$ilus','$writer')";
 	
 	mysqli_query($dbc, $query);
 	

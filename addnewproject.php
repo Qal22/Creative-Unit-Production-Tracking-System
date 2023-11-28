@@ -5,6 +5,9 @@ require 'databasefx.php';
 $qpersonnels = query("SELECT * FROM personnel");
 
 if (isset($_POST["submit"])) {
+  echo '<pre>';
+  
+  echo '</pre>';
   if (addproject($_POST) > 0 || addmilestone($_POST) > 0) {
     echo "<script>
     alert('Succeeded');
@@ -187,7 +190,7 @@ if (isset($_POST["submit"])) {
             <label for="projectSize">Project Size</label>
             <select class="form-control" id="projectSize" name="projectSize">
               <option value="" selected disabled>
-                Please select the type
+                Please select the size
               </option>
               <option value="A4">A4</option>
               <option value="A5">A5</option>
@@ -222,7 +225,7 @@ if (isset($_POST["submit"])) {
             <label for="Finishing">Finishing</label>
             <select class="form-control" id="Finishing" name="Finishing">
               <option value="" selected disabled>
-                Please select the type
+                Please select the finishing
               </option>
               <option value="UV">UV</option>
               <option value="SPOT UV">SPOT UV</option>
@@ -256,7 +259,7 @@ if (isset($_POST["submit"])) {
           <div class="form-group col-md-6">
             <label for="coordinator">Editor (Coordinator)</label>
             <select class="form-control" id="coordinator" name="coordinator" required>
-              <option value="" selected disabled>Please select the type</option>
+              <option value="" selected disabled>Please select the editor</option>
               <?php
               foreach ($qpersonnels as $personnel) :
                 if ($personnel["position"] == "Editor") {
@@ -270,7 +273,7 @@ if (isset($_POST["submit"])) {
           <div class="form-group col-md-6">
             <label for="proofing">Editor (Proofing)</label>
             <select class="form-control" id="proofing" name="proofing">
-              <option value="" selected disabled>Please select the type</option>
+              <option value="" selected disabled>Please select the editor</option>
               <?php
               foreach ($qpersonnels as $personnel) :
                 if ($personnel["position"] == "Editor") {
@@ -286,7 +289,7 @@ if (isset($_POST["submit"])) {
           <div class="form-group col-md-6">
             <label for="designerText">Graphic Designer (Text)</label>
             <select class="form-control" id="designerText" name="designerText" required>
-              <option value="" selected disabled>Please select the type</option>
+              <option value="" selected disabled>Please select the designer</option>
               <?php
               foreach ($qpersonnels as $personnel) :
                 if ($personnel["position"] == "Graphic Designer") {
@@ -300,7 +303,7 @@ if (isset($_POST["submit"])) {
           <div class="form-group col-md-6">
             <label for="designerCover">Graphic Designer (Cover)</label>
             <select class="form-control" id="designerCover" name="designerCover">
-              <option value="" selected disabled>Please select the type</option>
+              <option value="" selected disabled>Please select the designer</option>
               <?php
               foreach ($qpersonnels as $personnel) :
                 if ($personnel["position"] == "Graphic Designer") {
@@ -316,7 +319,7 @@ if (isset($_POST["submit"])) {
           <div class="form-group col-md-6">
             <label for="IlusText">Illustrator (Text)</label>
             <select class="form-control" id="IlusText" name="IlusText" required>
-              <option value="" selected disabled>Please select the type</option>
+              <option value="" selected disabled>Please select the illustrator</option>
               <?php
               foreach ($qpersonnels as $personnel) :
                 if ($personnel["position"] == "Illustrator") {
@@ -330,7 +333,7 @@ if (isset($_POST["submit"])) {
           <div class="form-group col-md-6">
             <label for="IlusCover">Illustrator (Cover)</label>
             <select class="form-control" id="IlusCover" name="IlusCover" >
-              <option value="" selected disabled>Please select the type</option>
+              <option value="" selected disabled>Please select the illustrator</option>
               <?php
               foreach ($qpersonnels as $personnel) :
                 if ($personnel["position"] == "Illustrator") {
@@ -362,7 +365,7 @@ if (isset($_POST["submit"])) {
     </div>
     <!-- End of Main Content -->
     <br />
-    <!-- Footer -->
+    <!-- Footer 
     <footer class="sticky-footer custom-footer">
       <div class="container my-auto">
         <div class="copyright text-center my-auto">
@@ -371,7 +374,7 @@ if (isset($_POST["submit"])) {
         </div>
       </div>
     </footer>
-    <!-- End of Footer -->
+    End of Footer -->
   </div>
   <!-- End of Content Wrapper -->
   </div>
